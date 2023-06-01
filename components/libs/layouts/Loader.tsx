@@ -7,7 +7,7 @@ import { ReactElement, useContext, useEffect, useState } from "react";
 
 // styles
 enum STYLES {
-  CONTAINER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-sm flex items-center justify-center transition ease-in-out duration-500 bg-[#00000050]",
+  CONTAINER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-sm flex items-center justify-center transition ease-in-out duration-500 bg-[#fff50] z-[300]",
   MOUNTED = "opacity-[100%]",
   UNMOUNTED = "opacity-0",
   ICON = "animate-reverse-spin text-3xl lg:text-6xl p-3 bg-white rounded-full",

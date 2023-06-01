@@ -1,6 +1,9 @@
 "use client";
 
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Badge from "./Badge"
 
 interface NavigationItemType {
   id: number;
@@ -28,12 +31,13 @@ const NavigationItems: NavigationItemType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-xl",
-  CONTAINER = "container flex items-center justify-between gap-5 mx-auto my-1",
+  NAV = "sticky top-0 backdrop-blur-xl shadow py-2",
+  CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold",
   ITEMS = "flex items-center justify-center",
   ITEM = "py-2 px-4 font-medium hover:bg-gray-100 rounded-lg cursor-pointer transition ease-in-out duration-300",
-  ACTIONS = "flex items-center justify-end gap-3",
+  ACTIONS = "flex items-center justify-end gap-5",
+  CART = "relative h-full mr-5 flex items-center justify-center"
 }
 
 const Navigation = () => {
@@ -41,7 +45,7 @@ const Navigation = () => {
     <nav className={STYLES.NAV}>
       <div className={STYLES.CONTAINER}>
         <div className={STYLES.BRAND}>
-          <Link href="/">Brand</Link>
+          <Link href="/">BrandName</Link>
         </div>
         <ul className={STYLES.ITEMS}>
           {NavigationItems.map((item: NavigationItemType) => {
@@ -54,6 +58,10 @@ const Navigation = () => {
           })}
         </ul>
         <div className={STYLES.ACTIONS}>
+          <Link href="/" className={STYLES.CART}>
+            <Badge count={999}/>
+            <FontAwesomeIcon icon={faCartShopping} className="icon-base" />
+          </Link>
           <button className="btn-primary">Account</button>
         </div>
       </div>
