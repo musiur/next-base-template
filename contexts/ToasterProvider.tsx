@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, createContext, useEffect, useState } from "react";
+import { ReactElement, createContext, useState } from "react";
 
 interface ToastType {
   show: boolean;

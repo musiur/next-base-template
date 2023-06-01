@@ -1,8 +1,13 @@
 import { ReactElement } from "react";
 import Toaster from "./Toaster";
+import Loader from "./Loader";
 
 const LayoutsWrapper = ({ children }: { children: ReactElement }) => {
-  return <Toaster>{children}</Toaster>;
+  return (
+    <Loader>
+      <Toaster>{children}</Toaster>
+    </Loader>
+  );
 };
 
 export default LayoutsWrapper;

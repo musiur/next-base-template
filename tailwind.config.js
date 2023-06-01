@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'reverse-spin': 'reverse-spin 1s linear infinite'
+      },
+      keyframes: {
+        'reverse-spin': {
+          from: {
+            transform: 'rotate(360deg)'
+          },
+        }
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
