@@ -5,7 +5,6 @@ This template can be used for any kind of project.
 ⚒️ Technologies used:
 TypeScript, TailwindCSS, SCSS, FontAwesome
 
-
 Site Demo link: https://next-base-template.vercel.app/
 
 Just clone and install packages. Then use for you project.
@@ -15,7 +14,7 @@ Just clone and install packages. Then use for you project.
 
 ```
 
-Installation from you directory of  **/next-base-template
+Installation from you directory of \*\*/next-base-template
 
 ```
     npm install
