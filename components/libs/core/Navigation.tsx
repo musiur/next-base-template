@@ -40,7 +40,7 @@ enum STYLES {
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold",
   ITEMS = "hidden md:flex items-center justify-center",
-  ITEM = "py-2 px-4 font-medium hover:bg-gray-100 rounded-lg cursor-pointer transition ease-in-out duration-300",
+  ITEM = "py-2 px-4 hover:bg-gray-100 rounded-lg cursor-pointer transition ease-in-out duration-300",
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
