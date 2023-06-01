@@ -3,12 +3,14 @@ import "./globals.scss";
 import { Inter } from "next/font/google";
 import { ReactElement } from "react";
 import LayoutsWrapper from "@/components/libs/layouts/LayoutsWrapper";
+import CoreCompWrapper from "@/components/libs/core/CoreCompWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Next Base Template",
-  description: "Generated with NextJS, ReactJS, TailwindCSS, SASS/SCSS, TypeScript",
+  description:
+    "Generated with NextJS, ReactJS, TailwindCSS, SASS/SCSS, TypeScript",
 };
 
 const RootLayout = ({ children }: { children: ReactElement }) => {
@@ -16,11 +18,15 @@ const RootLayout = ({ children }: { children: ReactElement }) => {
     <html lang="en">
       <body className={inter.className}>
         <ContextWrapper>
-          <LayoutsWrapper>{children}</LayoutsWrapper>
+          <LayoutsWrapper>
+            <CoreCompWrapper>
+              <>{children}</>
+            </CoreCompWrapper>
+          </LayoutsWrapper>
         </ContextWrapper>
       </body>
     </html>
   );
-}
+};
 
-export default RootLayout
+export default RootLayout;

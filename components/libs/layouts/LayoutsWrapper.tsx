@@ -5,7 +5,9 @@ import Loader from "./Loader";
 const LayoutsWrapper = ({ children }: { children: ReactElement }) => {
   return (
     <Loader>
-      <Toaster>{children}</Toaster>
+      <Toaster>
+        <>{children}</>
+      </Toaster>
     </Loader>
   );
 };
