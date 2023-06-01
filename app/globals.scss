@@ -9,3 +9,28 @@
 section {
   @apply my-10 lg:my-16;
 }
+
+// button styles and variants
+.btn {
+  @apply px-4 py-[0.5rem] rounded-lg focus:outline-0 hover:opacity-[80%] transition ease-in-out duration-300;
+}
+
+.btn-primary {
+  @extend .btn;
+  @apply bg-black text-white;
+}
+
+.btn-secondary {
+  @extend .btn;
+  @apply bg-gray-200;
+}
+
+.btn-outline {
+  @extend .btn;
+  @apply border border-gray-200;
+}
+
+.btn-error {
+  @extend .btn;
+  @apply bg-red-400 text-white;
+}

@@ -26,7 +26,6 @@ const NavigationItems: NavigationItemType[] = [
   },
 ];
 
-
 // styles
 enum STYLES {
   NAV = "sticky top-0 backdrop-blur-xl",
@@ -55,7 +54,7 @@ const Navigation = () => {
           })}
         </ul>
         <div className={STYLES.ACTIONS}>
-          <button>Account</button>
+          <button className="btn-primary">Account</button>
         </div>
       </div>
     </nav>
