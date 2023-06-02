@@ -9,7 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Badge from "./Badge";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+
+// import mockRouter from 'next-router-mock';
+
+// jest.mock('next/router', () => require('next-router-mock'));
 
 interface NavigationItemType {
   id: number;
@@ -48,14 +51,13 @@ enum STYLES {
   DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-2xl transition ease-in-out duration-300 flex md:hidden",
   MOUNTED = "translate-y-0",
   UNMOUNTED = "-translate-y-[100%]",
-  DRAWER_CONTAINER = "container mx-auto",
+  DRAWER_CONTAINER = "container mx-auto py-5",
   CLOSE_ICON = "icon-lg absolute top-0 right-0",
   DRAWER_ITEMS = "my-5",
   DRAWER_ITEM = "my-3",
 }
 
 const Navigation = () => {
-  const Router = useRouter();
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
@@ -73,10 +75,6 @@ const Navigation = () => {
   useEffect(() => {
     !isMounted && CloseDrawer();
   }, [isMounted]);
-
-  useEffect(() => {
-    CloseDrawer();
-  }, [Router]);
 
   return (
     <>
@@ -118,10 +116,10 @@ const Navigation = () => {
             isMounted ? STYLES.MOUNTED : STYLES.UNMOUNTED
           }`}
         >
-          <section className={STYLES.DRAWER_CONTAINER}>
+          <div className={STYLES.DRAWER_CONTAINER}>
             <div className={STYLES.BRAND}>
               <div className="relative">
-                <Link href="/">BrandName</Link>
+                <Link href="/" onClick={CloseDrawer}>BrandName</Link>
                 <FontAwesomeIcon
                   icon={faTimes}
                   className={STYLES.CLOSE_ICON}
@@ -135,13 +133,17 @@ const Navigation = () => {
               {NavigationItems.map((item: NavigationItemType) => {
                 const { id, text, link } = item;
                 return (
-                  <li key={id} className={STYLES.DRAWER_ITEM}>
+                  <li
+                    key={id}
+                    className={STYLES.DRAWER_ITEM}
+                    onClick={CloseDrawer}
+                  >
                     <Link href={link}>{text}</Link>
                   </li>
                 );
               })}
             </ul>
-          </section>
+          </div>
         </div>
       ) : null}
     </>
