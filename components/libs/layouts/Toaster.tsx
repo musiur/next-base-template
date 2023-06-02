@@ -12,14 +12,16 @@ import { ReactElement, useContext, useEffect, useState } from "react";
 // component styles
 enum STYLES {
   CONTAINER = "fixed top-0 left-0 w-screen h-screen z-[301]",
-  TOAST = "absolute top-[70px] right-0 m-2 bg-black border border-gray-100 rounded-xl drop-shadow-xl p-3 min-w-[300px] flex items-center justify-between gap-3",
+  TOAST = "absolute top-[70px] right-0 m-2 border border-gray-100 rounded-xl drop-shadow-xl p-3 min-w-[300px] flex items-center justify-between gap-3",
   TEXT = "text-gray-200 font-base",
   ICON = "text-gray-300 cursor-pointer",
   ANIMATION = "transition ease-in-out duration-500",
   MOUNTED = "translate-x-0",
   UNMOUNTED = "translate-x-[100%]",
   SUCCESS_TEXT = "text-gray-200",
-  ERROR_TEXT = "text-red-400",
+  ERROR_TEXT = "text-white",
+  SUCCESS_BG = "bg-primary",
+  ERROR_BG = "bg-error",
 }
 
 // main component function
@@ -50,9 +52,7 @@ const Toaster = ({ children }: { children: ReactElement }) => {
           }`}
           onAnimationEnd={() => !isMounted && setToast(InitialToastValue)}
         >
-          <div
-            className={STYLES.TOAST}
-          >
+          <div className={`${STYLES.TOAST} ${toast.type ? STYLES.SUCCESS_BG : STYLES.ERROR_BG}`}>
             <div
               className={`${STYLES.TEXT} ${
                 toast.type ? STYLES.SUCCESS_TEXT : STYLES.ERROR_TEXT
