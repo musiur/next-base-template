@@ -14,19 +14,45 @@ section {
   @apply my-10 lg:my-16;
 }
 
+// headings
+
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold;
+}
+
+h3 {
+  @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold;
+}
+
+h4 {
+  @apply text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold;
+}
+
+h5 {
+  @apply text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold;
+}
+
+h6 {
+  @apply text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold;
+}
+
 // button styles and variants
 .btn {
-  @apply px-4 py-[0.5rem] rounded-lg focus:outline-0 hover:opacity-[80%] transition ease-in-out duration-300;
+  @apply px-2 lg:px-4 py-[0.3rem] lg:py-[0.5rem] rounded-md lg:rounded-lg focus:outline-0 hover:opacity-[80%] transition ease-in-out duration-300 text-[0.8rem] lg:text-[1rem];
 }
 
 .btn-primary {
   @extend .btn;
-  @apply bg-black text-white;
+  @apply bg-primary text-white;
 }
 
 .btn-secondary {
   @extend .btn;
-  @apply bg-gray-200;
+  @apply bg-secondary;
 }
 
 .btn-outline {
@@ -36,7 +62,7 @@ section {
 
 .btn-error {
   @extend .btn;
-  @apply bg-pink-600 text-white;
+  @apply bg-error text-white;
 }
 
 // icon style and variants

@@ -10,6 +10,10 @@ import Link from "next/link";
 import Badge from "./Badge";
 import { useEffect, useState } from "react";
 
+// import mockRouter from 'next-router-mock';
+
+// jest.mock('next/router', () => require('next-router-mock'));
+
 interface NavigationItemType {
   id: number;
   text: string;
@@ -36,7 +40,7 @@ const NavigationItems: NavigationItemType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-xl shadow py-2",
+  NAV = "sticky top-0 backdrop-blur-2xl py-4",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold",
   ITEMS = "hidden md:flex items-center justify-center",
@@ -44,11 +48,13 @@ enum STYLES {
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
-  DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-xl transition ease-in-out duration-300",
+  DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-2xl transition ease-in-out duration-300 flex md:hidden",
   MOUNTED = "translate-y-0",
   UNMOUNTED = "-translate-y-[100%]",
-  DRAWER_CONTAINER = "container mx-auto",
-  CLOSE_ICON = "icon-lg absolute top-0 right-0 cursor-pointer",
+  DRAWER_CONTAINER = "container mx-auto py-5",
+  CLOSE_ICON = "icon-lg absolute top-0 right-0",
+  DRAWER_ITEMS = "my-5",
+  DRAWER_ITEM = "my-3",
 }
 
 const Navigation = () => {
@@ -61,10 +67,13 @@ const Navigation = () => {
   }, [openDrawer]);
 
   // animating on unmounting drawer component
-  useEffect(() => {
+  const CloseDrawer = () => {
     setTimeout(() => {
-      !isMounted && setOpenDrawer(false);
+      setOpenDrawer(false);
     }, 300);
+  };
+  useEffect(() => {
+    !isMounted && CloseDrawer();
   }, [isMounted]);
 
   return (
@@ -95,7 +104,7 @@ const Navigation = () => {
             <button className="btn-primary">Account</button>
             <FontAwesomeIcon
               icon={faHamburger}
-              className={STYLES.CART_ICON + " flex md:hidden"}
+              className={STYLES.CART_ICON + " flex md:hidden cursor-none"}
               onClick={() => setOpenDrawer(true)}
             />
           </div>
@@ -107,10 +116,10 @@ const Navigation = () => {
             isMounted ? STYLES.MOUNTED : STYLES.UNMOUNTED
           }`}
         >
-          <section className={STYLES.DRAWER_CONTAINER}>
+          <div className={STYLES.DRAWER_CONTAINER}>
             <div className={STYLES.BRAND}>
               <div className="relative">
-                <Link href="/">BrandName</Link>
+                <Link href="/" onClick={CloseDrawer}>BrandName</Link>
                 <FontAwesomeIcon
                   icon={faTimes}
                   className={STYLES.CLOSE_ICON}
@@ -120,7 +129,21 @@ const Navigation = () => {
                 />
               </div>
             </div>
-          </section>
+            <ul className={STYLES.DRAWER_ITEMS}>
+              {NavigationItems.map((item: NavigationItemType) => {
+                const { id, text, link } = item;
+                return (
+                  <li
+                    key={id}
+                    className={STYLES.DRAWER_ITEM}
+                    onClick={CloseDrawer}
+                  >
+                    <Link href={link}>{text}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       ) : null}
     </>
