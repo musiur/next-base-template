@@ -23,7 +23,7 @@ const Register = () => {
 
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    setErrors({...errors,...validator(formData)});
+    setErrors({ ...errors, ...validator(formData) });
   };
 
   const validator = (data: any) => {
@@ -66,8 +66,8 @@ const Register = () => {
   return (
     <div className="container mx-auto">
       <div className="max-w-[400px] mx-auto my-10 rounded-xl p-3 lg:p-5 border shadow">
-        <h6>Register</h6>
         <form>
+          <h6>Register</h6>
           <div>
             <label htmlFor="username">Username</label>
             <input
