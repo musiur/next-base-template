@@ -67,22 +67,22 @@ h6 {
 
 // icon style and variants
 .icon {
-  @apply hover:opacity-[70%] transition ease-in-out duration-300 max-w-[20px] max-h-[20px];
+  @apply hover:opacity-[70%] transition ease-in-out duration-300;
 }
 
 .icon-sm {
   @extend .icon;
-  @apply text-[1rem];
+  @apply max-w-[15px] max-h-[15px] w-[15px] h-[15px];
 }
 
 .icon-base {
   @extend .icon;
-  @apply text-[1.2rem];
+  @apply max-w-[22px] max-h-[22px] w-[22px] h-[22px];
 }
 
 .icon-lg {
   @extend .icon;
-  @apply text-[1.4rem];
+  @apply max-w-[30px] max-h-[30px] w-[30px] h-[30px];
 }
 
 // form styles
@@ -108,8 +108,6 @@ input,
 textarea {
   @apply border border-gray-200 rounded-lg px-2 py-1 focus:outline-0 focus:shadow-md focus:border-gray-300;
 }
-
-
 
 // custom scroll bar styles
 /* width */

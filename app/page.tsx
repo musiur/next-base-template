@@ -2,6 +2,8 @@
 
 import { LoaderContext, UniLoaderType } from "@/contexts/LoaderProvider";
 import { ToasterContext, UniToastType } from "@/contexts/ToasterProvider";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useEffect } from "react";
 
 const Home = () => {
@@ -76,12 +78,21 @@ const Home = () => {
         <h3 className="mb-10">Typography</h3>
         <h5 className="mb-5">Headings</h5>
         <div className="p-5 rounded-xl bg-gray-100 grid grid-cols-1 gap-3">
-            <h1>Heading</h1>
-            <h2>Heading</h2>
-            <h3>Heading</h3>
-            <h4>Heading</h4>
-            <h5>Heading</h5>
-            <h6>Heading</h6>
+          <h1>Heading</h1>
+          <h2>Heading</h2>
+          <h3>Heading</h3>
+          <h4>Heading</h4>
+          <h5>Heading</h5>
+          <h6>Heading</h6>
+        </div>
+      </section>
+
+      <section className="container">
+        <h3>Icons</h3>
+        <div className="my-5 flex items-center justify-start gap-3">
+          <FontAwesomeIcon icon={faCartShopping} className="icon-sm" />
+          <FontAwesomeIcon icon={faCartShopping} className="icon-base" />
+          <FontAwesomeIcon icon={faCartShopping} className="icon-lg" />
         </div>
       </section>
     </>
