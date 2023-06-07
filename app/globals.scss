@@ -67,7 +67,7 @@ h6 {
 
 // icon style and variants
 .icon {
-  @apply hover:opacity-[70%] transition ease-in-out duration-300;
+  @apply hover:opacity-[70%] transition ease-in-out duration-300 max-w-[20px] max-h-[20px];
 }
 
 .icon-sm {
@@ -84,6 +84,32 @@ h6 {
   @extend .icon;
   @apply text-[1.4rem];
 }
+
+// form styles
+form {
+  div {
+    @apply grid grid-cols-1 gap-1 my-3 relative;
+
+    span {
+      @apply text-error;
+    }
+
+    label {
+      @apply font-semibold;
+    }
+
+    a {
+      @apply text-right text-gray-600  hover:text-black hover:underline;
+    }
+  }
+}
+
+input,
+textarea {
+  @apply border border-gray-200 rounded-lg px-2 py-1 focus:outline-0 focus:shadow-md focus:border-gray-300;
+}
+
+
 
 // custom scroll bar styles
 /* width */
