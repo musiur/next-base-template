@@ -23,23 +23,16 @@ const Login = () => {
 
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    setErrors(validator(formData));
+    setErrors({...errors, ...validator(formData)});
   };
 
-  const validator = (data: object) => {
-    let obj = { username: "" };
+  const validator = (data: any) => {
+    let obj = { username: "", password: "" };
     if (!data.username.trim()) {
       obj.username = "Username is required!";
     }
-
-    if (!data.email.trim()) {
-      obj.email = "email is required!";
-    }
     if (!data.password.trim()) {
       obj.password = "password is required!";
-    }
-    if (!data.confirm_password.trim()) {
-      obj.confirm_password = "Confirm password is required!";
     }
 
     return obj;

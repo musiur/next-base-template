@@ -23,11 +23,11 @@ const Register = () => {
 
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    setErrors(validator(formData));
+    setErrors({...errors,...validator(formData)});
   };
 
-  const validator = (data: object) => {
-    let obj = { username: "" };
+  const validator = (data: any) => {
+    let obj = { username: "", email: "", password: "", confirm_password: "" };
     if (!data.username.trim()) {
       obj.username = "Username is required!";
     }
