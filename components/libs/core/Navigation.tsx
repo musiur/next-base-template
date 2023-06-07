@@ -101,7 +101,9 @@ const Navigation = () => {
                 className={STYLES.CART_ICON}
               />
             </Link>
-            <button className="btn-primary">Account</button>
+            <Link href="/auth/register">
+              <button className="btn-primary">Account</button>
+            </Link>
             <FontAwesomeIcon
               icon={faHamburger}
               className={STYLES.CART_ICON + " flex md:hidden cursor-none"}
@@ -119,7 +121,9 @@ const Navigation = () => {
           <div className={STYLES.DRAWER_CONTAINER}>
             <div className={STYLES.BRAND}>
               <div className="relative">
-                <Link href="/" onClick={CloseDrawer}>BrandName</Link>
+                <Link href="/" onClick={CloseDrawer}>
+                  BrandName
+                </Link>
                 <FontAwesomeIcon
                   icon={faTimes}
                   className={STYLES.CLOSE_ICON}
