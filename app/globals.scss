@@ -72,17 +72,17 @@ h6 {
 
 .icon-sm {
   @extend .icon;
-  @apply max-w-[15px] max-h-[15px] w-[15px] h-[15px];
+  @apply text-sm;
 }
 
 .icon-base {
   @extend .icon;
-  @apply max-w-[22px] max-h-[22px] w-[22px] h-[22px];
+  @apply text-lg;
 }
 
 .icon-lg {
   @extend .icon;
-  @apply max-w-[30px] max-h-[30px] w-[30px] h-[30px];
+  @apply text-2xl;
 }
 
 // form styles
@@ -101,6 +101,14 @@ form {
     a {
       @apply text-right text-gray-600  hover:text-black hover:underline;
     }
+  }
+
+  button {
+    @apply my-3;
+  }
+
+  h6 {
+    @apply text-center;
   }
 }
 
