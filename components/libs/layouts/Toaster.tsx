@@ -12,7 +12,7 @@ import { ReactElement, useContext, useEffect, useState } from "react";
 // component styles
 enum STYLES {
   CONTAINER = "fixed top-0 left-0 w-screen h-screen z-[301]",
-  TOAST = "absolute top-[70px] right-0 m-2 border border-gray-100 rounded-xl drop-shadow-xl p-3 min-w-[300px] flex items-center justify-between gap-3",
+  TOAST = "absolute top-[70px] right-0 m-4 border border-gray-100 rounded-xl drop-shadow-xl p-3 min-w-[300px] flex items-center justify-between gap-3",
   TEXT = "text-gray-200 font-base",
   ICON = "text-gray-300 cursor-pointer",
   ANIMATION = "transition ease-in-out duration-500",

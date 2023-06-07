@@ -84,3 +84,24 @@ h6 {
   @extend .icon;
   @apply text-[1.4rem];
 }
+
+// custom scroll bar styles
+/* width */
+::-webkit-scrollbar {
+  @apply w-1 rounded-full;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary rounded-full;
+}
