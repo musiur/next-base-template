@@ -100,7 +100,7 @@ const Register = () => {
             <FontAwesomeIcon
               icon={!showPass ? faEyeSlash : faEye}
               onClick={() => setShowPass(!showPass)}
-              className="absolute top-[36px] right-0 mr-1 text-gray-300 hover:text-gray-600 icon cursor-pointer"
+              className="absolute top-[36px] right-0 mr-1 icon-base cursor-pointer"
             />
           </div>
           <div>
@@ -117,7 +117,7 @@ const Register = () => {
             <FontAwesomeIcon
               icon={!showPass ? faEyeSlash : faEye}
               onClick={() => setShowPass(!showPass)}
-              className="absolute top-[36px] right-0 mr-1 text-gray-300 hover:text-gray-600 icon cursor-pointer"
+              className="absolute top-[36px] right-0 mr-1 icon-base cursor-pointer"
             />
           </div>
           <button className="btn-primary w-full" onClick={handleOnSubmit}>

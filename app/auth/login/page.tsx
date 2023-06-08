@@ -83,7 +83,7 @@ const Login = () => {
             <FontAwesomeIcon
               icon={!showPass ? faEyeSlash : faEye}
               onClick={() => setShowPass(!showPass)}
-              className="absolute top-[36px] right-0 mr-1 text-gray-300 hover:text-gray-600 icon cursor-pointer"
+              className="absolute top-[36px] right-0 mr-1 icon-base cursor-pointer"
             />
           </div>
           <div>
@@ -94,7 +94,7 @@ const Login = () => {
           </button>
           <div>
             <Link href="/auth/register" className="text-center">
-              {`Don't`} have account? Login
+              {`Don't`} have account? Register now!
             </Link>
           </div>
         </form>

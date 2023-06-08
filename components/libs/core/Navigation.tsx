@@ -10,10 +10,6 @@ import Link from "next/link";
 import Badge from "./Badge";
 import { useEffect, useState } from "react";
 
-// import mockRouter from 'next-router-mock';
-
-// jest.mock('next/router', () => require('next-router-mock'));
-
 interface NavigationItemType {
   id: number;
   text: string;

@@ -5,6 +5,10 @@ import { ReactElement } from "react";
 import LayoutsWrapper from "@/components/libs/layouts/LayoutsWrapper";
 import CoreCompWrapper from "@/components/libs/core/CoreCompWrapper";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
