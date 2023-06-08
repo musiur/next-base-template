@@ -44,7 +44,7 @@ enum STYLES {
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
-  DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-2xl transition ease-in-out duration-300 flex md:hidden",
+  DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-2xl transition ease-in-out duration-300 flex md:hidden z-10",
   MOUNTED = "translate-y-0",
   UNMOUNTED = "-translate-y-[100%]",
   DRAWER_CONTAINER = "container mx-auto py-5",
@@ -100,11 +100,13 @@ const Navigation = () => {
             <Link href="/auth/register">
               <button className="btn-primary">Account</button>
             </Link>
-            <FontAwesomeIcon
-              icon={faHamburger}
-              className={STYLES.CART_ICON + " flex md:hidden cursor-none"}
-              onClick={() => setOpenDrawer(true)}
-            />
+            <div className="md:hidden">
+              <FontAwesomeIcon
+                icon={faHamburger}
+                className={STYLES.CART_ICON}
+                onClick={() => setOpenDrawer(true)}
+              />
+            </div>
           </div>
         </div>
       </nav>
