@@ -8,7 +8,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Badge from "./Badge";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { InitialUserValue, UserContext } from "@/contexts/UserProvider";
+import { ToasterContext } from "@/contexts/ToasterProvider";
 
 interface NavigationItemType {
   id: number;
@@ -32,6 +34,11 @@ const NavigationItems: NavigationItemType[] = [
     text: "Item",
     link: "/item",
   },
+  {
+    id: 3,
+    text: "Dashboard",
+    link: "/dashboard",
+  },
 ];
 
 // styles
@@ -54,6 +61,8 @@ enum STYLES {
 }
 
 const Navigation = () => {
+  const { user, setUser } = useContext(UserContext);
+  const { setToast } = useContext(ToasterContext);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
@@ -97,9 +106,26 @@ const Navigation = () => {
                 className={STYLES.CART_ICON}
               />
             </Link>
-            <Link href="/auth/register">
-              <button className="btn-primary">Account</button>
-            </Link>
+            {user.token ? (
+              <button
+                className="btn-error"
+                onClick={() => {
+                  localStorage.clear();
+                  setUser(InitialUserValue);
+                  setToast({
+                    show: true,
+                    type: false,
+                    text: "Logout successful!",
+                  });
+                }}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link href="/auth/login">
+                <button className="btn-primary">Login</button>
+              </Link>
+            )}
             <div className="md:hidden">
               <FontAwesomeIcon
                 icon={faHamburger}

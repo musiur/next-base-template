@@ -3,11 +3,16 @@
 import { ReactElement } from "react";
 import ToasterProvider from "./ToasterProvider";
 import LoaderProvider from "./LoaderProvider";
+import UserProvider from "./UserProvider";
 
 const ContextWrapper = ({ children }: { children: ReactElement }) => {
   return (
     <LoaderProvider>
-      <ToasterProvider>{children}</ToasterProvider>
+      <ToasterProvider>
+        <UserProvider>
+          <>{children}</>
+        </UserProvider>
+      </ToasterProvider>
     </LoaderProvider>
   );
 };

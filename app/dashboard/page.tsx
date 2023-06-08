@@ -1,5 +1,11 @@
+import PrivateRoute from "@/routes/PrivateRoute";
+
 const Dashboard = () => {
-  return <div className="container border">Dashboard</div>;
+  return (
+    <PrivateRoute>
+      <section className="container mx-auto">Dashboard</section>
+    </PrivateRoute>
+  );
 };
 
 export default Dashboard;
