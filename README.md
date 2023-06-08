@@ -14,7 +14,7 @@ Just clone and install packages. Then use for you project.
 
 ```
 
-Installation from you directory of \*\*/next-base-template
+Installation from you directory of `/next-base-template`
 
 ```
     npm install
