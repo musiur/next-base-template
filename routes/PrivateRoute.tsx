@@ -1,7 +1,7 @@
-const PrivateRoute = () => {
-    return (
-        <div>Priavate route</div>
-    )
-}
+import { ReactElement } from "react";
+
+const PrivateRoute = ({ children }: { children: ReactElement }) => {
+  return <div>{children}</div>;
+};
 
 export default PrivateRoute;
