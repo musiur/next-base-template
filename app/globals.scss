@@ -86,12 +86,12 @@ h6 {
 }
 
 // form styles
-form {
+.form {
   div {
     @apply grid grid-cols-1 gap-1 my-3 relative;
 
     span {
-      @apply text-error;
+      @apply text-error font-normal;
     }
 
     label {
@@ -99,7 +99,7 @@ form {
     }
 
     a {
-      @apply text-right text-gray-600  hover:text-black hover:underline;
+      @apply text-gray-600  hover:text-black hover:underline;
     }
   }
 
