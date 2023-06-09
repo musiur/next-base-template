@@ -1,3 +1,5 @@
+"use client";
+
 import PrivateRoute from "@/routes/PrivateRoute";
 
 const Dashboard = () => {
